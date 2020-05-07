@@ -9,9 +9,9 @@ namespace QuickBuy.Dominio.Entidades
     {
         public int Id { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        public string senha { get; set; }
+        public string Senha { get; set; }
 
         public string SobreNome { get; set; }
 
@@ -22,7 +22,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+                AdicionaCritica("Email não informado");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionaCritica("Senha não informada");
         }
     }
 }

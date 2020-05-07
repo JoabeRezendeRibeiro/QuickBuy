@@ -48,6 +48,9 @@ namespace QuickBuy.Dominio.Entidades
             if (string.IsNullOrEmpty(CEP))
                 AdicionaCritica("Erro - CEP deve estar preenchido");
 
+            if (FormaPagamentoId == 0)
+                AdicionaCritica("Erro - Não foi informado a forma de Pagamento");
+
         }
     }
 }
